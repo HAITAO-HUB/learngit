@@ -1,0 +1,21 @@
+#include<stdio.h>
+int getSum(int a, int b){
+    int sum;
+    int carry;
+    sum=a^b;
+    carry=(a&b)<<1;
+    if(carry!=0)
+    {
+        return getSum( sum,  carry);
+    }
+    return sum;
+}
+int main()
+{
+int a=0;
+int b=0;
+scanf("%d%d",&a,&b);
+getSum(a,b);
+printf("%d\n",getSum(a,b));
+return 0;
+}
